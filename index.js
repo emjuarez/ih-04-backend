@@ -29,7 +29,9 @@ const app       = express()
 
 
 // 2. MIDDLEWARES
-//
+//VARIABLES DE ENTORNO
+//SI ESTAS EN LOCAL VALE UNA COSA Y EN REMOTO OTRA
+require("dotenv").config()
 
 
 // 3. RUTAS
@@ -38,6 +40,6 @@ app.use("/", require("./routes/index"))
 
 // 4. SERVIDOR
 
-app.listen(3005, () => {
+app.listen(process.env.PORT, () => {
 	console.log("Servidor activo")
 })
